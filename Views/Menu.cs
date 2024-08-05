@@ -6,6 +6,7 @@ namespace MathGame
         internal void ShowMenu(string name, DateTime date)
         {
 
+
             string menuSelection = "";
             bool isGameAlive = true;
 
@@ -37,16 +38,16 @@ namespace MathGame
                         Console.WriteLine("View previous games");
                         break;
                     case "a":
-                        Console.WriteLine("Addition game");
+                        GameEngine.AdditionGame("Addition Game");
                         break;
                     case "s":
-                        Console.WriteLine("Substraction game");
+                        GameEngine.SubtractionGame("Subtraction Game");
                         break;
                     case "m":
-                        Console.WriteLine("Multiplication game");
+                        GameEngine.MultiplicationGame("Multiplication Game");
                         break;
                     case "d":
-                        Console.WriteLine("Division game");
+                        GameEngine.DivisionGame("Division Game");
                         break;
                     case "q":
                         Console.WriteLine("Quitting game");
