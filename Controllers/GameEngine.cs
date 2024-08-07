@@ -2,7 +2,13 @@ namespace MathGame
 {
     internal class GameEngine
     {
-        internal static void AdditionGame(string message)
+        private GameHistory _gameHistory;
+
+        internal GameEngine(GameHistory gameHistory)
+        {
+            _gameHistory = gameHistory;
+        }
+        internal void AdditionGame(string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -55,9 +61,10 @@ namespace MathGame
                     Console.Clear();
                 }
             }
+            _gameHistory.AddToHistory(score, GameType.Addition);
         }
 
-        internal static void SubtractionGame(string message)
+        internal void SubtractionGame(string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -110,9 +117,10 @@ namespace MathGame
                     Console.Clear();
                 }
             }
+            _gameHistory.AddToHistory(score, GameType.Subtraction);
         }
 
-        internal static void MultiplicationGame(string message)
+        internal void MultiplicationGame(string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -165,9 +173,10 @@ namespace MathGame
                     Console.Clear();
                 }
             }
+            _gameHistory.AddToHistory(score, GameType.Multiplication);
         }
 
-        internal static void DivisionGame(string message)
+        internal void DivisionGame(string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -222,6 +231,7 @@ namespace MathGame
                     Console.Clear();
                 }
             }
+            _gameHistory.AddToHistory(score, GameType.Division);
         }
     }
 }
